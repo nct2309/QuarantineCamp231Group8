@@ -8,17 +8,17 @@
     ';
 ?>
 
-<div class="container-fluid border border-dark rounded p-5 m-5" id="dashboard">
+<div class="container border border-dark rounded p-3" id="dashboard">
     <div class="row">
         <h3 class="title text-center p-2">Dashboard</h3>
-        <p class="description text-center">Please choose one of the following service:</p>
+        <p class="description text-center">Please choose one of the following services:</p>
     </div>
     <div class="row">
-        <div class="col-3">
-            <button class="btn btn-primary" onclick="window.location.href='/qc/index.php?page=search_patient'">Search</button>
+        <div class="col-6 d-flex justify-content-center">
+            <button class="btn btn-primary" onclick="window.location.href='/qc/index.php?page=search_patient'">Search Patient</button>
         </div>
-        <div class="col-3">
-            <button class="btn btn-primary" onclick="window.location.href='/qc/index.php?page=insert_patient'">Insert</button>
+        <div class="col-6 d-flex justify-content-center">
+            <button class="btn btn-primary" onclick="window.location.href='/qc/index.php?page=insert_patient'">Insert Patient</button>
         </div>
     </div>
 </div>
