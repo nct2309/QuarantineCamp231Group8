@@ -9,7 +9,7 @@
     </head>
     <body>
         <?php
-            $PATH = $_SERVER["DOCUMENT_ROOT"] . "/qc";
+            $PATH = $_SERVER["DOCUMENT_ROOT"] . "/DB"; // original root: /qc
             include_once($PATH . "/components/navbar.php");
         ?>
         <div class="container-fluid">
@@ -17,7 +17,7 @@
                 if (!empty($_GET['page'])) {
                     $page = $_GET['page'];
                 } else {
-                    header("Location: /qc/index.php?page=home");
+                    header("Location: index.php?page=home"); // original path: /qc/index.php?page=home
                 }
                 if (file_exists($PATH . "/pages/$page.php")) {
                     include_once( $PATH . "/pages/$page.php");

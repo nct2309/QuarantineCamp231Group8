@@ -1,4 +1,4 @@
-<link rel="stylesheet"  href="/qc/css/insert_patient.css">
+<link rel="stylesheet"  href="/css/insert_patient.css"> <!-- original path: /qc/css/insert_patient.css -->
 <h3 class="title text-center p-2">Insert New Patient Record</h3>
 <p class="description text-center">Please provide the following information about the new patient</p>
 
