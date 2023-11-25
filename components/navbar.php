@@ -39,7 +39,7 @@
                 <?php
                     if(isset($_SESSION['user_id'])){ echo
                         '<div class="col-xxl-auto align-self-center">
-                            <a href="logout.php">
+                            <a href="/DB/pages/logout.php">
                                 <button type="button" class="button-login">
                                 Logout
                                 </button>
@@ -48,14 +48,14 @@
                         } else{ echo
                         '
                         <div class="col-xxl-auto align-self-center">
-                            <a href="register.php">
+                            <a href="/DB/index.php?page=register">
                                 <button type="button" class="button-signup">
                                 Register
                                 </button>
                             </a>
                         </div>
                         <div class="col-xxl-auto align-self-center">
-                            <a href="login.php">
+                            <a href="/DB/index.php?page=login">
                                 <button type="button" class="button-login">
                                 Login
                                 </button>

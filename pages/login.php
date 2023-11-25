@@ -1,8 +1,7 @@
 <?php
-    include ('head.php');
-    session_start();
+    
     if (isset($_SESSION['user_id'])){
-        header ("Location: index.php");
+        header ("Location: /DB/index.php");
     }
 ?>
 
@@ -44,7 +43,7 @@
                     // If validation succeeds, allow the form to submit via AJAX
                     var formData = new FormData(document.getElementById('login_form'));
                     var xhr = new XMLHttpRequest();
-                    xhr.open('POST', 'login_processing.php', true);
+                    xhr.open('POST', '/DB/pages/login_processing.php', true);
                     xhr.withCredentials = true;
 
                     xhr.onreadystatechange = function () {
@@ -58,7 +57,7 @@
                                 }
                                 else if (xhr.responseText.trim() == 'Login successful!') {
                                     // Redirect to index.php when login is successful
-                                    window.location.href = "index.php";
+                                    window.location.href = "/DB/index.php";
                                 }
                                 else {
                                     // Display the response from login_processing.php
@@ -71,9 +70,6 @@
                 }
             }
         </script>
-        <div class="container-fluid text-center text-white first-class" style="background-image: linear-gradient(to right, rgba(39,32,87,255),#62c9d7);">
-            <h1>PrintPal</h1>
-        </div>
     </head>
     <body>
         <div class="container mt-3">
@@ -84,7 +80,7 @@
                             Login
                         </div>
                         <div class="card-body">
-                            <form id="login_form" action="login_processing.php" method="post" onsubmit="submitForm(); return false;">
+                            <form id="login_form" onsubmit="submitForm(); return false;">
                                 <div class="mt-0">
                                     <label for="username">Username (E-mail address)</label>
                                     <input type="text" class="form-control" id="username" name="username" placeholder="Enter your E-mail address" required>
