@@ -1,39 +1,70 @@
 <?php
   session_start();
 ?> 
+<link rel="stylesheet" href="/DB/css/navbar_style.css">
 
-<nav class="navbar navbar-expand-lg sticky-top navbar-light shadow-sm navbar-dark bg-primary">
-  <div class="container-fluid">
-    <a class="navbar-brand " href="/qc/index.php"><strong>Quarantine Camp Group 8</strong></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class=" collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link text-uppercase" href="/qc/index.php?page=home">Home</a>
-        </li>
-        <?php if (isset($_SESSION["authenticated"])) : ?>
-          <li class="nav-item">
-              <a class="nav-link text-uppercase" href="/qc/index.php?page=search_patient">Search</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link text-uppercase" href="/qc/index.php?page=insert_patient">Insert</a>
-          </li>          
-        <?php else : ?>
-          <li class="nav-item">
-            <a class="nav-link text-uppercase" href="/qc/index.php?page=login">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-uppercase" href="/qc/index.php?page=register">Register</a>
-          </li>
-        <?php endif; ?>
-      </ul>
-
-      <?php if (isset($_SESSION["authenticated"])) : ?>
-          <p1 class="d-flex text-white ms-auto"><?php echo $_COOKIE["user"] . ", " . "level: " . $_COOKIE["userlevel"] ?></p1>
-      <?php endif; ?>
+<div class="container-fluid text-center" style="background-image: linear-gradient(to right, #ed1b2e,#fde7e9);">
+    <div class="row">
+        <div class="col-xxl-auto first-class align-self-center">
+            <a href="index.php">
+                <h1>QUARANTINE CAMP</h1>
+            </a>
+        </div>
+        <div class="col-xxl-auto ms-5 align-self-center">
+            <div class="row justify-content-center second-class">
+                <div class="col-xxl-auto align-self-center">
+                    <a href="/DB/index.php?page=home">
+                        Home
+                    </a>
+                </div>
+                <div class="col-xxl-auto align-self-center">
+                    <a href="/DB/index.php?page=dashboard">
+                        Dashboard
+                    </a>
+                </div>
+                <div class="col-xxl-auto align-self-center">
+                <a href="/DB/index.php?page=guide">
+                        Guide
+                    </a>
+                </div>
+                <div class="col-xxl-auto align-self-center">
+                <a href="/DB/index.php?page=moreInfo.php">
+                        More Information
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-auto ms-auto me-5 align-self-center">
+            <div class="row justify-content-center">
+                <?php
+                    if(isset($_SESSION['user_id'])){ echo
+                        '<div class="col-xxl-auto align-self-center">
+                            <a href="logout.php">
+                                <button type="button" class="button-login">
+                                Logout
+                                </button>
+                            </a>
+                        </div>';
+                        } else{ echo
+                        '
+                        <div class="col-xxl-auto align-self-center">
+                            <a href="register.php">
+                                <button type="button" class="button-signup">
+                                Register
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col-xxl-auto align-self-center">
+                            <a href="login.php">
+                                <button type="button" class="button-login">
+                                Login
+                                </button>
+                            </a>
+                        </div>
+                        ';
+                        }
+                ?>
+            </div>
+        </div>
     </div>
   </div>
-</nav>

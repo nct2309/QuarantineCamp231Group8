@@ -15,10 +15,10 @@
     </div>
     <div class="row">
         <div class="col-3">
-            <button class="btn btn-primary" onclick="window.location.href='/qc/index.php?page=search_patient'">Search</button>
+            <button class="btn btn-primary" onclick="window.location.href='/DB/index.php?page=search_patient'">Search</button>
         </div>
         <div class="col-3">
-            <button class="btn btn-primary" onclick="window.location.href='/qc/index.php?page=insert_patient'">Insert</button>
+            <button class="btn btn-primary" onclick="window.location.href='/DB/index.php?page=insert_patient'">Insert</button>
         </div>
     </div>
 </div>
